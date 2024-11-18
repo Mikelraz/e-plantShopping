@@ -305,7 +305,7 @@ function ProductList() {
                             <div className='product-description'>{plant.description}</div>
                             <div className='product-cost'>Cost: {plant.cost}</div>
                             <button  className={`product-button ${addedToCart[plant.name] ? 'added-to-cart' : ''}`} onClick={() => handleAddToCart(plant)} disabled={addedToCart[plant.name]}>
-                            {addedToCart[plant.name] ? 'Added to Cart' : 'Add to Cart'}
+                            {cartItems.some(item => item.name === plant.name) ? 'Added to Cart' : 'Add to Cart'}
                             </button>
                         </div>
                     ))}                
